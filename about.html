@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Bebel Yen</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .about-header {
+      padding: 5rem var(--side-padding) 3rem;
+      border-bottom: 1px solid var(--line);
+      background: var(--off-white);
+    }
+    .about-header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* EDUCATION */
+    .edu-section {
+      padding: 5rem var(--side-padding);
+      border-bottom: 1px solid var(--line);
+    }
+    .edu-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .edu-label { }
+    .edu-card {
+      border: 1px solid var(--line);
+      padding: 2.5rem;
+    }
+    .edu-school {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .edu-degree {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+    }
+    .edu-meta {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    .coursework-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+      display: block;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+    .tag-list span {
+      font-size: 0.78rem;
+      padding: 0.3rem 0.8rem;
+      background: var(--off-white);
+      border: 1px solid var(--line);
+      color: var(--text-body);
+    }
+
+    /* EXPERIENCE TIMELINE */
+    .exp-section {
+      padding: 5rem var(--side-padding);
+    }
+    .exp-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .timeline {
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 1px;
+      background: var(--line);
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      padding-bottom: 3rem;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -4px; top: 7px;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--text-dark);
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 1px var(--text-dark);
+    }
+    .t-date {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+    .t-role {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 0.2rem;
+    }
+    .t-company {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+    .t-location {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .t-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+    .t-stack span {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      background: var(--off-white);
+      border: 1px solid var(--line);
+      color: var(--text-muted);
+    }
+    .t-bullets {
+      list-style: none;
+      padding: 0;
+    }
+    .t-bullets li {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.75;
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.45rem;
+    }
+    .t-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--mid-gray);
+    }
+
+    @media (max-width: 800px) {
+      .edu-inner, .exp-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Bebel Yen</a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <section class="about-header">
+      <div class="about-header-inner fade-up">
+        <p class="section-label">About</p>
+        <h1 class="section-title" style="margin-bottom:0;">Education &amp;<br><em style="font-family:var(--font-display); font-style:italic;">Experience</em></h1>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="edu-section">
+      <div class="edu-inner">
+        <div class="edu-label fade-up">
+          <p class="section-label">Education</p>
+        </div>
+        <div class="fade-up" style="transition-delay:0.1s">
+          <div class="edu-card">
+            <div class="edu-school">University of California,<br>Los Angeles</div>
+            <div class="edu-degree">B.S. Statistics and Data Science</div>
+            <div class="edu-meta">Expected June 2026</div>
+
+            <div class="divider"></div>
+            <span class="coursework-label">Relevant Coursework</span>
+            <div class="tag-list">
+              <span>Data Structures &amp; Algorithms</span>
+              <span>Data Analysis &amp; Regression</span>
+              <span>Data Mining &amp; Statistical Models</span>
+              <span>Computation &amp; Optimization Statistics</span>
+              <span>Monte Carlo Methods</span>
+              <span>Linear Regression Models</span>
+              <span>Statistical Analysis</span>
+              <span>Statistical Consulting</span>
+              <span>Applied Sampling</span>
+            </div>
+
+            <div class="divider" style="margin-top:1.5rem;"></div>
+            <span class="coursework-label">Campus Organizations</span>
+            <div class="tag-list">
+              <span>UCLA Statistics Club</span>
+              <span>The Bruin Experiment Mentor</span>
+              <span>DataFest</span>
+              <span>Bruin Club Tennis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="exp-section">
+      <div class="exp-inner">
+        <div class="fade-up">
+          <p class="section-label">Experience</p>
+          <div style="margin-top:1rem;">
+            <a href="assets/BebelYenResume.pdf" class="btn" target="_blank" style="font-size:0.73rem;">Resume ↗</a>
+          </div>
+        </div>
+        <div class="timeline fade-up" style="transition-delay:0.1s">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="t-date">May – Dec 2025</div>
+            <div class="t-role">Data Science &amp; AI Intern</div>
+            <div class="t-company">Neem Health (AI Healthcare)</div>
+            <div class="t-location">New York City, NY</div>
+            <div class="t-stack">
+              <span>SQL</span><span>R</span><span>Python</span><span>HTML</span><span>CSS</span>
+            </div>
+            <ul class="t-bullets">
+              <li>Implemented MCP server workflows to retrieve and aggregate clinical trial data from academic hospital databases.</li>
+              <li>Built web scraping pipelines to extract institutional research data and monitor changes in trial volume over time.</li>
+              <li>Used SQL to clean and structure medical journal JSON files into CSV, enhancing data quality for ML and analysis.</li>
+              <li>Conducted chatbot testing and data analysis to evaluate user interactions; presented findings to leadership to improve AI model accuracy and user experience.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="t-date">Sept 2023 – Jun 2024</div>
+            <div class="t-role">Data Science Research Intern</div>
+            <div class="t-company">Stanford University</div>
+            <div class="t-location">Stanford, CA</div>
+            <div class="t-stack">
+              <span>Python</span><span>PANDAS</span><span>Excel</span><span>PowerPoint</span>
+            </div>
+            <ul class="t-bullets">
+              <li>Collected and cleaned public datasets from Cal-PASS Plus Student Success Metrics (16,700+ entries) to analyze success rates for underrepresented students.</li>
+              <li>Created interactive visualizations to present key trends and improve data accessibility.</li>
+              <li>Selected to present findings at Stanford's Honors Research Symposium under Professor Matt Harrison.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="t-date">Jan 2023 – Sept 2024</div>
+            <div class="t-role">Peer Tutor</div>
+            <div class="t-company">Pass the Torch</div>
+            <div class="t-location">Los Altos Hills, CA</div>
+            <ul class="t-bullets">
+              <li>Nominated by 3 professors to tutor in Single Variable Integral Calculus, Multivariable Calculus, and Honors Compositional English — twice-weekly sessions.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Bebel Yen &nbsp;·&nbsp; <a href="mailto:bebelyen@ucla.edu" style="color:inherit;">bebelyen@ucla.edu</a></p>
+  </footer>
+
+  <script>
+    function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Bebel Yen</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .projects-header {
+      padding: 5rem var(--side-padding) 3rem;
+      border-bottom: 1px solid var(--line);
+      background: var(--off-white);
+    }
+    .projects-header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .projects-section {
+      padding: 5rem var(--side-padding);
+    }
+    .projects-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      margin-top: 3rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.2s ease;
+    }
+
+    .project-card:hover { background: var(--off-white); }
+
+    .project-number {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--light-gray);
+      line-height: 1;
+      margin-bottom: 1rem;
+      user-select: none;
+    }
+
+    .project-period {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .project-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.8;
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .project-tag {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.65rem;
+      background: var(--off-white);
+      border: 1px solid var(--line);
+      color: var(--text-muted);
+    }
+
+    .project-card:hover .project-tag { background: var(--white); }
+
+    /* Featured full-width */
+    .project-card.featured {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    .featured-right { padding-top: 3.5rem; }
+
+    @media (max-width: 860px) {
+      .projects-grid { grid-template-columns: 1fr; background: var(--white); border: none; gap: 0; }
+      .project-card { border: 1px solid var(--line); margin-bottom: 1px; }
+      .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+      .featured-right { padding-top: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Bebel Yen</a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <section class="projects-header">
+      <div class="projects-header-inner fade-up">
+        <p class="section-label">Portfolio</p>
+        <h1 class="section-title" style="margin-bottom:0.75rem;">Projects</h1>
+        <p style="font-size:0.92rem; color:var(--text-muted); max-width:500px; line-height:1.8;">
+          Data science and statistical research spanning healthcare, economics, cognitive science, and real estate.
+        </p>
+      </div>
+    </section>
+
+    <section class="projects-section">
+      <div class="projects-inner">
+        <div class="projects-grid">
+
+          <!-- Featured -->
+          <div class="project-card featured fade-up">
+            <div class="featured-left">
+              <div class="project-number">01</div>
+              <div class="project-period">Sept – Dec 2025</div>
+              <h2 class="project-title">Household Size Prediction &amp; AWS Analysis</h2>
+              <div class="project-tags">
+                <span class="project-tag">R</span>
+                <span class="project-tag">Machine Learning</span>
+                <span class="project-tag">Tableau</span>
+                <span class="project-tag">AWS</span>
+                <span class="project-tag">XGBoost</span>
+                <span class="project-tag">RandomForest</span>
+              </div>
+            </div>
+            <div class="featured-right">
+              <p class="project-desc">
+                Developed a predictive model to estimate household size using the large-scale 
+                Open E-Commerce v.10 dataset (1.8M+ entries). Conducted extensive EDA with ggplot2 
+                and Tableau, then implemented supervised and unsupervised ML models — Baseline Linear 
+                Regression, RandomForest, and XGBoost — to optimize advertising targeting strategies.
+              </p>
+            </div>
+          </div>
+
+          <!-- 02 -->
+          <div class="project-card fade-up" style="transition-delay:0.1s">
+            <div class="project-number">02</div>
+            <div class="project-period">Sept – Dec 2025</div>
+            <h2 class="project-title">Economic Crisis &amp; Wealth Inequality in the United States</h2>
+            <div class="project-tags">
+              <span class="project-tag">Tableau</span>
+              <span class="project-tag">SQL</span>
+              <span class="project-tag">Federal Reserve Data</span>
+            </div>
+            <p class="project-desc">
+              Built an interactive website integrating Tableau dashboards with SQL-cleaned Federal 
+              Reserve datasets to analyze wealth inequality during economic crises. Explored trends 
+              in homeownership and wealth gaps across education levels.
+            </p>
+          </div>
+
+          <!-- 03 -->
+          <div class="project-card fade-up" style="transition-delay:0.15s">
+            <div class="project-number">03</div>
+            <div class="project-period">April – Jun 2025</div>
+            <h2 class="project-title">Optimizing Memory Retention: Evaluating Cognitive Strategies in Humans</h2>
+            <div class="project-tags">
+              <span class="project-tag">R</span>
+              <span class="project-tag">ANOVA</span>
+              <span class="project-tag">Experimental Design</span>
+            </div>
+            <p class="project-desc">
+              Designed and analyzed a randomized experiment (n=108) evaluating behavioral and 
+              physiological factors influencing memory retention. Applied ANOVA and post-hoc 
+              tests to identify significant treatment effects across cognitive strategies.
+            </p>
+          </div>
+
+          <!-- 04 -->
+          <div class="project-card fade-up" style="transition-delay:0.2s">
+            <div class="project-number">04</div>
+            <div class="project-period">Jan – April 2025</div>
+            <h2 class="project-title">Predictive Modeling: Home Prices in Austin, TX</h2>
+            <div class="project-tags">
+              <span class="project-tag">R</span>
+              <span class="project-tag">Machine Learning</span>
+              <span class="project-tag">AIC/BIC</span>
+              <span class="project-tag">Linear Regression</span>
+            </div>
+            <p class="project-desc">
+              Built a predictive model for housing prices using multiple linear regression in R, 
+              applying data transformations and systematic model selection via AIC/BIC to produce 
+              the most accurate and interpretable model.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Bebel Yen &nbsp;·&nbsp; <a href="mailto:bebelyen@ucla.edu" style="color:inherit;">bebelyen@ucla.edu</a></p>
+  </footer>
+
+  <script>
+    function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

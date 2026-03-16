@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bebel Yen</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .hero {
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem var(--side-padding) 3rem;
+    }
+
+    .hero-photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 1px solid var(--line);
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-name em { font-style: italic; }
+
+    .hero-subtitle {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 4rem;
+    }
+
+    .hero-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      padding: 0.6rem 1.3rem;
+      border: 1px solid var(--line);
+      color: var(--text-body);
+      background: var(--white);
+      transition: all 0.2s ease;
+    }
+
+    .hero-link-btn:hover {
+      border-color: var(--text-dark);
+      color: var(--text-dark);
+      background: var(--off-white);
+    }
+
+    .hero-link-btn svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      fill: currentColor;
+    }
+
+    .hero-bio-section {
+      max-width: 600px;
+      text-align: left;
+      border-top: 1px solid var(--line);
+      padding-top: 3rem;
+      width: 100%;
+    }
+
+    .hero-bio-section p {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .hero-bio-section p:last-child { margin-bottom: 0; }
+
+    /* SKILLS */
+    .skills-section {
+      padding: 4rem var(--side-padding) 5rem;
+      border-top: 1px solid var(--line);
+      background: var(--off-white);
+    }
+
+    .skills-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .skills-inner .section-label {
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 1rem 2rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .skill-row:first-of-type { border-top: 1px solid var(--line); }
+
+    .skill-category {
+      font-size: 0.73rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-top: 0.1rem;
+    }
+
+    .skill-items {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.75;
+    }
+
+    @media (max-width: 600px) {
+      .skill-row { grid-template-columns: 1fr; gap: 0.4rem; }
+      .hero-links { gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Bebel Yen</a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <section class="hero">
+      <img src="assets/headshot.jpg" alt="Bebel Yen" class="hero-photo fade-up" />
+      <h1 class="hero-name fade-up" style="transition-delay:0.05s">Bebel <em>Yen</em></h1>
+      <p class="hero-subtitle fade-up" style="transition-delay:0.1s">UCLA · Statistics &amp; Data Science</p>
+
+      <div class="hero-links fade-up" style="transition-delay:0.15s">
+
+        <a href="assets/BebelYenResume.pdf" target="_blank" class="hero-link-btn">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
+          Resume
+        </a>
+
+        <a href="https://linkedin.com/in/bebelyen" target="_blank" class="hero-link-btn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+
+        <a href="https://github.com/bebelyen" target="_blank" class="hero-link-btn">
+          <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          GitHub
+        </a>
+
+        <a href="mailto:bebelyen@ucla.edu" class="hero-link-btn">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          Email
+        </a>
+
+      </div>
+
+      <div class="hero-bio-section fade-up" style="transition-delay:0.2s">
+        <p>I'm a fourth year Data Science and Statistics major at UCLA.</p>
+        <p>
+          My focus is in machine learning and statistical analysis — I'm proficient in R, Python, and SQL, 
+          and have built end-to-end projects spanning data preparation, modeling, and deployment. 
+          I'm drawn to problems where rigorous analysis leads to real, practical impact, and I work best 
+          in collaborative environments where ideas and methods are openly challenged and refined.
+        </p>
+      </div>
+    </section>
+
+    <section class="skills-section">
+      <div class="skills-inner">
+        <span class="section-label fade-up">Skills</span>
+
+        <div class="skill-row fade-up">
+          <div class="skill-category">Statistical Modeling &amp; Machine Learning</div>
+          <div class="skill-items">Supervised and unsupervised models — Baseline Linear Regression, RandomForest, XGBoost, K-Means Clustering</div>
+        </div>
+
+        <div class="skill-row fade-up">
+          <div class="skill-category">Data Analysis &amp; Visualization</div>
+          <div class="skill-items">Exploratory Data Analysis, Experimental Design, Data Mining, Data Visualization (Tableau)</div>
+        </div>
+
+        <div class="skill-row fade-up">
+          <div class="skill-category">Programming &amp; Tools</div>
+          <div class="skill-items">Python, R, SQL</div>
+        </div>
+
+        <div class="skill-row fade-up">
+          <div class="skill-category">Statistics</div>
+          <div class="skill-items">Probability, Mathematical Statistics, Linear Models, Data Analysis and Regression, Design and Analysis of Experiments, Statistical Models and Data Mining, Computational Statistics with R, Computation and Optimization for Statistics, Introduction to Monte Carlo Methods, Applied Sampling</div>
+        </div>
+
+        <div class="skill-row fade-up">
+          <div class="skill-category">Computer Science</div>
+          <div class="skill-items">Object-Oriented Programming, Intermediate Software Design, Advanced Data Structures and Algorithms</div>
+        </div>
+
+        <div class="skill-row fade-up">
+          <div class="skill-category">Mathematics</div>
+          <div class="skill-items">Single and Multivariate Differential and Integral Calculus, Linear Algebra, Differential Equations</div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Bebel Yen &nbsp;·&nbsp; <a href="mailto:bebelyen@ucla.edu" style="color:inherit;">bebelyen@ucla.edu</a></p>
+  </footer>
+
+  <script>
+    function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+/* ============================================
+   BEBEL YEN — Personal Website Stylesheet
+   Clean & Minimal | Editorial Style
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --white: #ffffff;
+  --off-white: #f8f7f5;
+  --light-gray: #efefed;
+  --mid-gray: #c8c6c2;
+  --text-muted: #999793;
+  --text-body: #3a3835;
+  --text-dark: #1a1917;
+  --accent: #2a2a2a;
+  --accent-light: #e8e6e2;
+  --line: #e2e0dc;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  --nav-height: 64px;
+  --max-width: 1080px;
+  --side-padding: clamp(1.5rem, 5vw, 4rem);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--text-body);
+  background: var(--white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAVBAR ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--side-padding);
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: var(--text-dark);
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text-dark);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px; height: 1.5px;
+  background: var(--text-dark);
+  transition: all 0.3s;
+}
+
+/* ── PAGE WRAPPER ── */
+.page {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+}
+
+/* ── SECTION CONTAINERS ── */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 2.5rem;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--mid-gray);
+  margin: 1.5rem 0;
+}
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.75rem 1.75rem;
+  border: 1px solid var(--text-dark);
+  color: var(--text-dark);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--text-dark);
+  color: var(--white);
+}
+
+.btn-filled {
+  background: var(--text-dark);
+  color: var(--white);
+}
+
+.btn-filled:hover {
+  background: transparent;
+  color: var(--text-dark);
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem var(--side-padding);
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ── FADE IN ANIMATION ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE NAV ── */
+@media (max-width: 700px) {
+  .nav-toggle { display: flex; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0; right: 0;
+    background: var(--white);
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 0.5rem 0;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links li a {
+    display: block;
+    padding: 0.9rem var(--side-padding);
+    font-size: 0.85rem;
+  }
+
+  .nav-links a::after { display: none; }
+}
