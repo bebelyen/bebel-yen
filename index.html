@@ -148,6 +148,60 @@
       .skill-row { grid-template-columns: 1fr; gap: 0.4rem; }
       .hero-links { gap: 0.5rem; }
     }
+
+    .certs-section {
+  padding: 4rem var(--side-padding) 5rem;
+  border-top: 1px solid var(--line);
+}
+.certs-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.certs-inner .section-label {
+  margin-bottom: 2rem;
+  display: block;
+}
+.certs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.cert-card {
+  display: grid;
+  grid-template-columns: 180px 1fr 120px;
+  align-items: center;
+  gap: 1rem 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.cert-card:first-of-type {
+  border-top: 1px solid var(--line);
+}
+.cert-issuer {
+  font-size: 0.73rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.cert-name {
+  font-size: 0.88rem;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+.cert-date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .cert-card {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  .cert-date { text-align: left; }
+}
   </style>
 </head>
 <body>
