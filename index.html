@@ -36,8 +36,6 @@
       margin-bottom: 0.5rem;
     }
 
-    .hero-name em { font-style: italic; }
-
     .hero-subtitle {
       font-size: 0.8rem;
       font-weight: 400;
@@ -101,7 +99,7 @@
 
     .hero-bio-section p:last-child { margin-bottom: 0; }
 
-    /* SKILLS */
+    /* ── SKILLS ── */
     .skills-section {
       padding: 4rem var(--side-padding) 5rem;
       border-top: 1px solid var(--line);
@@ -144,64 +142,66 @@
       line-height: 1.75;
     }
 
+    /* ── CERTIFICATIONS ── */
+    .certs-section {
+      padding: 4rem var(--side-padding) 5rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .certs-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .certs-inner .section-label {
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    .certs-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .cert-card {
+      display: grid;
+      grid-template-columns: 180px 1fr 120px;
+      align-items: center;
+      gap: 1rem 2rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cert-card:first-of-type { border-top: 1px solid var(--line); }
+
+    .cert-issuer {
+      font-size: 0.73rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .cert-name {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
+    .cert-date {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: right;
+    }
+
+    /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .skill-row { grid-template-columns: 1fr; gap: 0.4rem; }
       .hero-links { gap: 0.5rem; }
+      .cert-card { grid-template-columns: 1fr; gap: 0.25rem; }
+      .cert-date { text-align: left; }
     }
-
-    .certs-section {
-  padding: 4rem var(--side-padding) 5rem;
-  border-top: 1px solid var(--line);
-}
-.certs-inner {
-  max-width: 600px;
-  margin: 0 auto;
-}
-.certs-inner .section-label {
-  margin-bottom: 2rem;
-  display: block;
-}
-.certs-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.cert-card {
-  display: grid;
-  grid-template-columns: 180px 1fr 120px;
-  align-items: center;
-  gap: 1rem 2rem;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--line);
-}
-.cert-card:first-of-type {
-  border-top: 1px solid var(--line);
-}
-.cert-issuer {
-  font-size: 0.73rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-.cert-name {
-  font-size: 0.88rem;
-  color: var(--text-body);
-  line-height: 1.5;
-}
-.cert-date {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  text-align: right;
-}
-
-@media (max-width: 600px) {
-  .cert-card {
-    grid-template-columns: 1fr;
-    gap: 0.25rem;
-  }
-  .cert-date { text-align: left; }
-}
   </style>
 </head>
 <body>
@@ -222,8 +222,9 @@
 
   <div class="page">
 
+    <!-- HERO -->
     <section class="hero">
-      <img src="assets/headshot.jpg" alt="Bebel Yen" class="hero-photo fade-up" />
+      <img src="assets/Headshot.jpg" alt="Bebel Yen" class="hero-photo fade-up" />
       <h1 class="hero-name fade-up" style="transition-delay:0.05s">Bebel Yen</h1>
       <p class="hero-subtitle fade-up" style="transition-delay:0.1s">UCLA · Statistics &amp; Data Science</p>
 
@@ -251,17 +252,19 @@
 
       </div>
 
+      <!-- BIO -->
       <div class="hero-bio-section fade-up" style="transition-delay:0.2s">
         <p>I'm a fourth year Data Science and Statistics major at UCLA.</p>
         <p>
-          My focus is in machine learning and statistical analysis — I'm proficient in R, Python, and SQL, 
-          and have built end-to-end projects spanning data preparation, modeling, and deployment. 
-          I'm drawn to problems where rigorous analysis leads to real, practical impact, and I work best 
+          My focus is in machine learning and statistical analysis — I'm proficient in R, Python, and SQL,
+          and have built end-to-end projects spanning data preparation, modeling, and deployment.
+          I'm drawn to problems where rigorous analysis leads to real, practical impact, and I work best
           in collaborative environments where ideas and methods are openly challenged and refined.
         </p>
       </div>
     </section>
 
+    <!-- SKILLS -->
     <section class="skills-section">
       <div class="skills-inner">
         <span class="section-label fade-up">Skills</span>
@@ -278,7 +281,7 @@
 
         <div class="skill-row fade-up">
           <div class="skill-category">Programming &amp; Tools</div>
-          <div class="skill-items">Python, R, SQL, JavaScript, C++</div>
+          <div class="skill-items">Python, R, SQL</div>
         </div>
 
         <div class="skill-row fade-up">
@@ -300,32 +303,32 @@
     </section>
 
     <!-- CERTIFICATIONS -->
-<section class="certs-section">
-  <div class="certs-inner">
-    <span class="section-label fade-up">Certifications</span>
-    <div class="certs-grid">
+    <section class="certs-section">
+      <div class="certs-inner">
+        <span class="section-label fade-up">Certifications</span>
+        <div class="certs-grid">
 
-      <div class="cert-card fade-up">
-        <div class="cert-issuer">IBM</div>
-        <div class="cert-name">Databases & SQL for Data Science with Python</div>
-        <div class="cert-date">September 2025</div>
+          <div class="cert-card fade-up">
+            <div class="cert-issuer">IBM</div>
+            <div class="cert-name">Databases &amp; SQL for Data Science with Python</div>
+            <div class="cert-date">September 2025</div>
+          </div>
+
+          <div class="cert-card fade-up">
+            <div class="cert-issuer">Akuna Capital</div>
+            <div class="cert-name">Options Trading 201</div>
+            <div class="cert-date">April 2025</div>
+          </div>
+
+          <div class="cert-card fade-up">
+            <div class="cert-issuer">Stanford University ICME</div>
+            <div class="cert-name">Python for Data Science</div>
+            <div class="cert-date">July 2023</div>
+          </div>
+
+        </div>
       </div>
-
-      <div class="cert-card fade-up">
-        <div class="cert-issuer">Akuna Capital</div>
-        <div class="cert-name">Options Trading 201</div>
-        <div class="cert-date">April 2025</div>
-      </div>
-
-      <div class="cert-card fade-up">
-        <div class="cert-issuer">Stanford University ICME</div>
-        <div class="cert-name">Python for Data Science</div>
-        <div class="cert-date">July 2023</div>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
   </div>
 
