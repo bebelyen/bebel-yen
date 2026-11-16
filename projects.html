@@ -13,104 +13,65 @@
     }
     .page-header-inner { max-width: var(--max); margin: 0 auto; }
     .page-header-sub {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
       max-width: 480px;
       line-height: 1.8;
       margin-top: 0.75rem;
     }
 
-    /* GRID */
+    /* PROJECT LIST */
     .projects-section { padding: 4rem var(--pad) 5rem; }
     .projects-inner { max-width: var(--max); margin: 0 auto; }
 
-    .projects-grid {
+    .project-item {
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 0;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      margin-top: 2.5rem;
+      grid-template-columns: 100px 1fr;
+      gap: 2rem;
+      transition: background 0.2s;
     }
-
-    .project-card {
-      background: var(--bg);
-      padding: 2.25rem;
-      display: flex;
-      flex-direction: column;
-      transition: background 0.2s ease;
-      position: relative;
-    }
-    .project-card:hover { background: var(--bg-2); }
-
-    /* featured spans full width */
-    .project-card.featured {
-      grid-column: span 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      padding: 2.75rem;
-    }
-    .featured-right { padding-top: 0; display: flex; flex-direction: column; justify-content: flex-end; }
+    .project-item:first-child { border-top: 1px solid var(--border); }
 
     .proj-num {
       font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text-dim);
-      margin-bottom: 1.75rem;
+      padding-top: 0.3rem;
     }
+
+    .proj-body { display: flex; flex-direction: column; gap: 0.6rem; }
 
     .proj-period {
       font-family: var(--mono);
-      font-size: 0.65rem;
+      font-size: 0.63rem;
       letter-spacing: 0.08em;
       color: var(--text-dim);
-      margin-bottom: 0.5rem;
     }
 
     .proj-title {
-      font-size: 1.1rem;
-      font-weight: 600;
+      font-family: var(--display);
+      font-size: 1.15rem;
+      font-weight: 700;
       color: var(--white);
       line-height: 1.3;
       letter-spacing: -0.01em;
-      margin-bottom: 0.9rem;
     }
 
     .proj-desc {
-      font-size: 0.84rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
       line-height: 1.8;
-      flex: 1;
-      margin-bottom: 1.5rem;
+      max-width: 680px;
     }
 
-    .proj-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.4rem; }
 
-    /* accent line on hover */
-    .project-card::after {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 2px;
-      background: var(--accent);
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-    .project-card:hover::after { opacity: 1; }
-
-    @media (max-width: 860px) {
-      .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1px;
-      }
-      .project-card.featured {
-        grid-column: span 1;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
+    @media (max-width: 600px) {
+      .project-item { grid-template-columns: 1fr; gap: 0.75rem; }
     }
   </style>
 </head>
@@ -118,7 +79,7 @@
 
   <nav>
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">by<span>.</span>dev</a>
+      <a href="index.html" class="nav-logo">BY</a>
       <button class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
@@ -140,68 +101,58 @@
 
     <section class="projects-section">
       <div class="projects-inner">
-        <div class="projects-grid">
 
-          <!-- 01 featured -->
-          <div class="project-card featured fade-up">
-            <div class="featured-left">
-              <div class="proj-num">project_01</div>
-              <div class="proj-period">Sept – Dec 2025</div>
-              <h2 class="proj-title">Household Size Prediction &amp; AWS Analysis</h2>
-              <div class="proj-tags">
-                <span class="tag">R</span>
-                <span class="tag">Machine Learning</span>
-                <span class="tag">Tableau</span>
-                <span class="tag">AWS</span>
-                <span class="tag">XGBoost</span>
-                <span class="tag">RandomForest</span>
-              </div>
-            </div>
-            <div class="featured-right">
-              <p class="proj-desc">
-                Developed a predictive model to estimate household size using the large-scale Open E-Commerce v.10 dataset (1.8M+ entries). Conducted extensive EDA with ggplot2 and Tableau, then implemented supervised and unsupervised ML models — Baseline Linear Regression, RandomForest, and XGBoost — to optimize advertising targeting strategies.
-              </p>
+        <div class="project-item fade-up">
+          <div class="proj-num">01</div>
+          <div class="proj-body">
+            <div class="proj-period">Sept – Dec 2025</div>
+            <div class="proj-title">Household Size Prediction &amp; AWS Analysis</div>
+            <p class="proj-desc">Developed a predictive model to estimate household size using the large-scale Open E-Commerce v.10 dataset (1.8M+ entries). Conducted extensive EDA with ggplot2 and Tableau, then implemented supervised and unsupervised ML models — Baseline Linear Regression, RandomForest, and XGBoost — to optimize advertising targeting strategies.</p>
+            <div class="proj-tags">
+              <span class="tag">R</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Tableau</span>
+              <span class="tag">AWS</span>
+              <span class="tag">XGBoost</span>
+              <span class="tag">RandomForest</span>
             </div>
           </div>
+        </div>
 
-          <!-- 02 -->
-          <div class="project-card fade-up" style="transition-delay:.08s">
-            <div class="proj-num">project_02</div>
+        <div class="project-item fade-up" style="transition-delay:.08s">
+          <div class="proj-num">02</div>
+          <div class="proj-body">
             <div class="proj-period">Sept – Dec 2025</div>
-            <h2 class="proj-title">Economic Crisis &amp; Wealth Inequality in the United States</h2>
-            <p class="proj-desc">
-              Built an interactive website integrating Tableau dashboards with SQL-cleaned Federal Reserve datasets to analyze wealth inequality during economic crises. Explored trends in homeownership and wealth gaps across education levels.
-            </p>
+            <div class="proj-title">Economic Crisis &amp; Wealth Inequality in the United States</div>
+            <p class="proj-desc">Built an interactive website integrating Tableau dashboards with SQL-cleaned Federal Reserve datasets to analyze wealth inequality during economic crises. Explored trends in homeownership and wealth gaps across education levels.</p>
             <div class="proj-tags">
               <span class="tag">Tableau</span>
               <span class="tag">SQL</span>
               <span class="tag">Federal Reserve Data</span>
             </div>
           </div>
+        </div>
 
-          <!-- 03 -->
-          <div class="project-card fade-up" style="transition-delay:.13s">
-            <div class="proj-num">project_03</div>
+        <div class="project-item fade-up" style="transition-delay:.13s">
+          <div class="proj-num">03</div>
+          <div class="proj-body">
             <div class="proj-period">April – Jun 2025</div>
-            <h2 class="proj-title">Optimizing Memory Retention: Evaluating Cognitive Strategies in Humans</h2>
-            <p class="proj-desc">
-              Designed and analyzed a randomized experiment (n=108) evaluating behavioral and physiological factors influencing memory retention. Applied ANOVA and post-hoc tests to identify significant treatment effects across cognitive strategies.
-            </p>
+            <div class="proj-title">Optimizing Memory Retention: Evaluating Cognitive Strategies in Humans</div>
+            <p class="proj-desc">Designed and analyzed a randomized experiment (n=108) evaluating behavioral and physiological factors influencing memory retention. Applied ANOVA and post-hoc tests to identify significant treatment effects across cognitive strategies.</p>
             <div class="proj-tags">
               <span class="tag">R</span>
               <span class="tag">ANOVA</span>
               <span class="tag">Experimental Design</span>
             </div>
           </div>
+        </div>
 
-          <!-- 04 -->
-          <div class="project-card fade-up" style="transition-delay:.18s">
-            <div class="proj-num">project_04</div>
+        <div class="project-item fade-up" style="transition-delay:.18s">
+          <div class="proj-num">04</div>
+          <div class="proj-body">
             <div class="proj-period">Jan – April 2025</div>
-            <h2 class="proj-title">Predictive Modeling: Home Prices in Austin, TX</h2>
-            <p class="proj-desc">
-              Built a predictive model for housing prices using multiple linear regression in R, applying data transformations and systematic model selection via AIC/BIC to produce the most accurate and interpretable model.
-            </p>
+            <div class="proj-title">Predictive Modeling: Home Prices in Austin, TX</div>
+            <p class="proj-desc">Built a predictive model for housing prices using multiple linear regression in R, applying data transformations and systematic model selection via AIC/BIC to produce the most accurate and interpretable model.</p>
             <div class="proj-tags">
               <span class="tag">R</span>
               <span class="tag">Machine Learning</span>
@@ -209,15 +160,15 @@
               <span class="tag">Linear Regression</span>
             </div>
           </div>
-
         </div>
+
       </div>
     </section>
 
   </div>
 
   <footer>
-    <p>bebel yen &nbsp;·&nbsp; <a href="mailto:bebelyen@g.ucla.edu">bebelyen@g.ucla.edu</a> &nbsp;·&nbsp; © 2026</p>
+    <p>bebel yen &nbsp;·&nbsp; <a href="mailto:bebel.yen@columbia.edu">bebel.yen@columbia.edu</a> &nbsp;·&nbsp; © 2026</p>
   </footer>
 
   <script>
