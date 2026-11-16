@@ -19,13 +19,11 @@
       max-width: var(--max);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 180px 1fr;
+      grid-template-columns: 160px 1fr;
       gap: 4rem;
       align-items: start;
     }
-
     .edu-cards { display: flex; flex-direction: column; gap: 1rem; }
-
     .edu-card {
       background: var(--bg-2);
       border: 1px solid var(--border);
@@ -34,32 +32,27 @@
       transition: border-color 0.2s;
     }
     .edu-card:hover { border-color: var(--border-light); }
-
     .edu-school {
+      font-family: var(--display);
       font-size: 1.1rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--white);
       margin-bottom: 0.3rem;
-      letter-spacing: -0.01em;
     }
-    .edu-degree {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 0.2rem;
-    }
+    .edu-degree { font-size: 0.87rem; color: var(--text-muted); margin-bottom: 0.2rem; }
     .edu-date {
       font-family: var(--mono);
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       color: var(--text-dim);
       margin-bottom: 1.25rem;
     }
     .tag-wrap { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .tag-label {
       font-family: var(--mono);
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-dim);
+      color: var(--accent);
       margin-bottom: 0.6rem;
       display: block;
       margin-top: 1rem;
@@ -71,11 +64,10 @@
       max-width: var(--max);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 180px 1fr;
+      grid-template-columns: 160px 1fr;
       gap: 4rem;
       align-items: start;
     }
-
     .timeline { position: relative; }
     .timeline::before {
       content: '';
@@ -84,14 +76,12 @@
       width: 1px;
       background: var(--border);
     }
-
     .tl-item {
       position: relative;
       padding-left: 2rem;
       padding-bottom: 2.75rem;
     }
     .tl-item:last-child { padding-bottom: 0; }
-
     .tl-dot {
       position: absolute;
       left: -4px; top: 6px;
@@ -100,35 +90,26 @@
       background: var(--accent);
       border: 2px solid var(--bg);
     }
-
     .tl-date {
       font-family: var(--mono);
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       color: var(--text-dim);
       margin-bottom: 0.4rem;
       letter-spacing: 0.06em;
     }
     .tl-role {
+      font-family: var(--display);
       font-size: 1.05rem;
       font-weight: 600;
       color: var(--white);
-      letter-spacing: -0.01em;
       margin-bottom: 0.15rem;
     }
-    .tl-company {
-      font-size: 0.82rem;
-      color: var(--accent);
-      margin-bottom: 0.1rem;
-    }
-    .tl-location {
-      font-size: 0.78rem;
-      color: var(--text-dim);
-      margin-bottom: 0.9rem;
-    }
+    .tl-company { font-size: 0.82rem; color: var(--accent); margin-bottom: 0.1rem; }
+    .tl-location { font-size: 0.78rem; color: var(--text-dim); margin-bottom: 0.9rem; }
     .tl-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1rem; }
     .tl-bullets { list-style: none; padding: 0; }
     .tl-bullets li {
-      font-size: 0.85rem;
+      font-size: 0.87rem;
       color: var(--text-muted);
       line-height: 1.75;
       padding-left: 1.1rem;
@@ -152,7 +133,7 @@
 
   <nav>
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">by<span>.</span>dev</a>
+      <a href="index.html" class="nav-logo">BY</a>
       <button class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
@@ -226,7 +207,7 @@
         <div class="fade-up">
           <span class="label">// experience</span>
           <br/><br/>
-          <a href="assets/BebelYenResume.pdf" class="btn" target="_blank" style="font-size:0.7rem;">Resume ↗</a>
+          <a href="assets/BebelYenResume.pdf" class="btn" target="_blank" style="font-size:0.68rem;">Resume ↗</a>
         </div>
 
         <div class="timeline fade-up" style="transition-delay:.1s">
@@ -296,7 +277,7 @@
   </div>
 
   <footer>
-    <p>bebel yen &nbsp;·&nbsp; <a href="mailto:bebelyen@g.ucla.edu">bebelyen@g.ucla.edu</a> &nbsp;·&nbsp; © 2026</p>
+    <p>bebel yen &nbsp;·&nbsp; <a href="mailto:bebel.yen@columbia.edu">bebel.yen@columbia.edu</a> &nbsp;·&nbsp; © 2026</p>
   </footer>
 
   <script>
