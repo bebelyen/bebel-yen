@@ -1,25 +1,27 @@
 /* ============================================
    BEBEL YEN — Personal Website
-   Techy / Modern / Startup Aesthetic
+   Electric Iris · Syne + Inter
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg: #0a0a0a;
-  --bg-2: #111111;
-  --bg-3: #1a1a1a;
-  --border: #2a2a2a;
-  --border-light: #333333;
-  --text: #e8e8e8;
-  --text-muted: #666666;
-  --text-dim: #444444;
-  --accent: #7fff6e;
-  --accent-dim: rgba(127, 255, 110, 0.12);
-  --accent-border: rgba(127, 255, 110, 0.3);
-  --white: #ffffff;
+  --bg: #0a0a0f;
+  --bg-2: #0f0f1a;
+  --bg-3: #161624;
+  --border: #1e1e32;
+  --border-light: #2a2a45;
+  --text: #e8e6ff;
+  --text-muted: #9b96c8;
+  --text-dim: #4a4870;
+  --accent: #a78bfa;
+  --accent-2: #60a5fa;
+  --accent-dim: rgba(167, 139, 250, 0.1);
+  --accent-border: rgba(167, 139, 250, 0.3);
+  --white: #f1f0ff;
 
   --font: 'Inter', system-ui, sans-serif;
+  --display: 'Syne', system-ui, sans-serif;
   --mono: 'JetBrains Mono', monospace;
 
   --nav-height: 60px;
@@ -45,7 +47,7 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: var(--nav-height);
-  background: rgba(10,10,10,0.85);
+  background: rgba(10, 10, 15, 0.88);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
   z-index: 100;
@@ -64,15 +66,13 @@ nav {
 }
 
 .nav-logo {
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text);
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
   text-decoration: none;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
 }
-
-.nav-logo span { color: var(--accent); }
 
 .nav-links {
   display: flex;
@@ -81,21 +81,18 @@ nav {
 }
 
 .nav-links a {
-  font-size: 0.8rem;
+  font-family: var(--font);
+  font-size: 0.82rem;
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--text-muted);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.nav-links a:hover,
-.nav-links a.active { color: var(--text); }
-
-.nav-links a.active {
-  color: var(--accent);
-}
+.nav-links a:hover { color: var(--text); }
+.nav-links a.active { color: var(--accent); }
 
 /* hamburger */
 .nav-toggle {
@@ -123,12 +120,10 @@ nav {
   padding: 0 var(--pad);
 }
 
-.section { padding: 4.5rem 0; }
-
 /* ── LABELS ── */
 .label {
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -139,11 +134,12 @@ nav {
 
 /* ── SECTION TITLE ── */
 .section-title {
+  font-family: var(--display);
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--white);
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   margin-bottom: 2.5rem;
 }
 
@@ -153,7 +149,7 @@ nav {
   align-items: center;
   gap: 0.5rem;
   font-family: var(--mono);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-decoration: none;
@@ -171,35 +167,15 @@ nav {
   background: var(--accent-dim);
 }
 
-.btn-accent {
-  background: var(--accent);
-  color: #000;
-  border-color: var(--accent);
-  font-weight: 600;
-}
-.btn-accent:hover {
-  background: transparent;
-  color: var(--accent);
-  border-color: var(--accent);
-}
-
 /* ── TAGS ── */
 .tag {
   font-family: var(--mono);
-  font-size: 0.68rem;
-  padding: 0.25rem 0.6rem;
+  font-size: 0.65rem;
+  padding: 0.22rem 0.6rem;
   background: var(--bg-3);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-light);
   color: var(--text-muted);
   border-radius: 3px;
-}
-
-/* ── DIVIDER ── */
-.divider {
-  width: 100%;
-  height: 1px;
-  background: var(--border);
-  margin: 2.5rem 0;
 }
 
 /* ── FOOTER ── */
